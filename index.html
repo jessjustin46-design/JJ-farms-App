@@ -70,6 +70,79 @@
 </div>
 
 <script>
+  // ─── MOT DE PASSE ─────────────────────────────────────────────
+  // 👇 CHANGE TON MOT DE PASSE ICI (entre les guillemets)
+  const MOT_DE_PASSE = "mange\mon\paff\JB";
+  // ──────────────────────────────────────────────────────────────
+
+  (function() {
+    const ok = sessionStorage.getItem('jjfarms-auth');
+    if (ok === '1') return;
+
+    document.body.style.display = 'none';
+
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+      position:fixed;inset:0;background:#f7f3ec;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      z-index:99999;font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      padding:30px;
+    `;
+    overlay.innerHTML = `
+      <svg width="60" height="69" viewBox="0 0 80 92" fill="none" style="margin-bottom:16px">
+        <defs>
+          <radialGradient id="lg" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#6aaa5a"/><stop offset="100%" stop-color="#2d6a22"/></radialGradient>
+          <radialGradient id="gg" cx="50%" cy="0%" r="100%"><stop offset="0%" stop-color="#f0cc6a"/><stop offset="100%" stop-color="#b8952a"/></radialGradient>
+        </defs>
+        <path d="M40 85 L40 52" stroke="#2d6a22" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M40 52 C40 52 30 38 32 26 C34 16 40 12 40 12 C40 12 46 16 48 26 C50 38 40 52 40 52Z" fill="url(#lg)"/>
+        <path d="M37 46 C37 46 20 40 16 28 C13 19 17 13 17 13 C17 13 24 15 28 23 C33 33 37 46 37 46Z" fill="url(#lg)" opacity="0.92"/>
+        <path d="M43 46 C43 46 60 40 64 28 C67 19 63 13 63 13 C63 13 56 15 52 23 C47 33 43 46 43 46Z" fill="url(#lg)" opacity="0.92"/>
+        <circle cx="40" cy="58" r="14" fill="url(#gg)"/>
+        <text x="40" y="55" text-anchor="middle" fill="#2a1800" font-size="6.5" font-family="serif" font-weight="700">JJ</text>
+        <text x="40" y="64" text-anchor="middle" fill="#5a3800" font-size="3.8" font-family="serif" letter-spacing="1">FARM'S</text>
+      </svg>
+      <div style="font-size:22px;font-weight:700;color:#2a2018;font-family:Georgia,serif;margin-bottom:4px">JJ Farm's</div>
+      <div style="font-size:11px;color:#a09070;letter-spacing:2px;font-family:monospace;margin-bottom:32px">ACCÈS PRIVÉ</div>
+      <input id="pwd-input" type="password" placeholder="Mot de passe" autocomplete="current-password"
+        style="width:100%;max-width:300px;padding:14px 18px;border-radius:14px;border:1.5px solid #e8dfc8;
+               background:#fffdf8;font-size:16px;outline:none;color:#2a2018;text-align:center;
+               font-family:monospace;margin-bottom:10px;box-sizing:border-box"/>
+      <div id="pwd-error" style="color:#c0392b;font-size:12px;font-family:monospace;height:18px;margin-bottom:8px"></div>
+      <button id="pwd-btn"
+        style="width:100%;max-width:300px;padding:14px 0;border-radius:14px;cursor:pointer;
+               background:linear-gradient(135deg,#b8952a,#d4aa3a);border:none;color:#fff;
+               font-size:15px;font-family:monospace;font-weight:700;
+               box-shadow:0 4px 16px rgba(184,149,42,0.4)">
+        🌿 Entrer
+      </button>
+    `;
+    document.body.appendChild(overlay);
+
+    function tryLogin() {
+      const input = document.getElementById('pwd-input').value;
+      if (input === MOT_DE_PASSE) {
+        sessionStorage.setItem('jjfarms-auth', '1');
+        overlay.remove();
+        document.body.style.display = '';
+      } else {
+        const err = document.getElementById('pwd-error');
+        err.textContent = '❌ Mot de passe incorrect';
+        document.getElementById('pwd-input').value = '';
+        document.getElementById('pwd-input').style.borderColor = '#c0392b';
+        setTimeout(() => {
+          err.textContent = '';
+          document.getElementById('pwd-input').style.borderColor = '#e8dfc8';
+        }, 2000);
+      }
+    }
+
+    document.getElementById('pwd-btn').addEventListener('click', tryLogin);
+    document.getElementById('pwd-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') tryLogin();
+    });
+  })();
+
   // Show install banner on iOS Safari after 3s (if not already installed)
   const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
   const isStandalone = window.navigator.standalone === true;
