@@ -247,6 +247,8 @@ const STRAINS_PHOTO = {
 };
 
 const STRAINS_AUTO = {
+
+  // ── EXISTANTES (inchangées) ────────────────────────────────────────────
   sticky_beast:{name:"Sticky Beast Automatic",icon:"🍬",type:"Indica Auto",category:"auto",total_weeks:{min:7,max:9},height_cm:{min:60,max:90},difficulty:"Facile",light_schedule:"18/6 ou 20/4 seed-to-harvest",tips_global:"Très résistante, idéale débutants. LST léger. Buds denses → ventilation max.",phases:{veg:{temp:{min:22,max:27},humidity:{min:50,max:65},lamp_height_cm:60,ec:{min:0.8,max:1.2}},flower:{temp:{min:20,max:25},humidity:{min:40,max:50},lamp_height_cm:40,ec:{min:1.8,max:2.0}},drying:{temp:{min:15,max:21},humidity:{min:45,max:55}}}},
   sunset_sherbet:{name:"Sunset Sherbet Automatic",icon:"🌅",type:"Indica Auto",category:"auto",total_weeks:{min:8,max:10},height_cm:{min:70,max:110},difficulty:"Facile",light_schedule:"18/6 ou 20/4 seed-to-harvest",tips_global:"Compacte 70-110 cm. Supporte bien l'entraînement.",phases:{veg:{temp:{min:22,max:27},humidity:{min:50,max:65},lamp_height_cm:55,ec:{min:0.8,max:1.3}},flower:{temp:{min:18,max:27},humidity:{min:40,max:50},lamp_height_cm:40,ec:{min:1.6,max:2.0}},drying:{temp:{min:15,max:21},humidity:{min:45,max:55}}}},
   blueberry:{name:"Blueberry Automatic",icon:"🫐",type:"Hybride Auto",category:"auto",total_weeks:{min:8,max:10},height_cm:{min:60,max:100},difficulty:"Facile",light_schedule:"18/6 ou 20/4 seed-to-harvest",tips_global:"Plus frais → couleurs violettes/bleues. LST/SCROG recommandé.",phases:{veg:{temp:{min:21,max:26},humidity:{min:55,max:70},lamp_height_cm:55,ec:{min:0.8,max:1.3}},flower:{temp:{min:18,max:24},humidity:{min:40,max:50},lamp_height_cm:40,ec:{min:1.4,max:1.8}},drying:{temp:{min:15,max:21},humidity:{min:45,max:55}}}},
@@ -254,7 +256,447 @@ const STRAINS_AUTO = {
   ak420:{name:"AK 420 Automatic",icon:"⚡",type:"Hybride Auto",category:"auto",total_weeks:{min:8,max:10},height_cm:{min:70,max:110},difficulty:"Facile",light_schedule:"18/6 ou 20/4 seed-to-harvest",tips_global:"Très résistante aux erreurs et moisissures. Effet uplifting.",phases:{veg:{temp:{min:23,max:28},humidity:{min:50,max:65},lamp_height_cm:55,ec:{min:0.8,max:1.3}},flower:{temp:{min:23,max:28},humidity:{min:40,max:50},lamp_height_cm:40,ec:{min:1.5,max:1.9}},drying:{temp:{min:15,max:21},humidity:{min:45,max:55}}}},
   diesel_auto:{name:"Diesel Auto Automatic",icon:"⛽",type:"Sativa Auto",category:"auto",total_weeks:{min:9,max:11},height_cm:{min:80,max:130},difficulty:"Intermédiaire",light_schedule:"18/6 ou 20/4 seed-to-harvest",tips_global:"Structure ouverte, stretch possible → LST recommandé.",phases:{veg:{temp:{min:23,max:28},humidity:{min:55,max:70},lamp_height_cm:60,ec:{min:0.8,max:1.3}},flower:{temp:{min:23,max:28},humidity:{min:40,max:50},lamp_height_cm:50,ec:{min:1.5,max:1.9}},drying:{temp:{min:15,max:21},humidity:{min:45,max:55}}}},
   monster_dwarf:{name:"Monster Dwarf Automatic",icon:"🦐",type:"Indica Auto Naine",category:"auto",total_weeks:{min:8,max:9},height_cm:{min:30,max:60},difficulty:"Facile",light_schedule:"18/6 ou 20/4 seed-to-harvest",tips_global:"30-60 cm → idéale SOG/micro-grow. EC bas, pas de stress.",phases:{veg:{temp:{min:22,max:26},humidity:{min:50,max:65},lamp_height_cm:50,ec:{min:0.6,max:1.0}},flower:{temp:{min:22,max:26},humidity:{min:40,max:50},lamp_height_cm:45,ec:{min:1.4,max:1.8}},drying:{temp:{min:15,max:21},humidity:{min:45,max:55}}}},
+  // etc.
+
+  // ── NOUVELLES ─────────────────────────────────────────────────────────
+
+  lemon_cherry_gelato: {
+    name: "Lemon Cherry Gelato Auto", icon: "🍋🍒", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 110 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Buds très résineuses, surveiller humidité en fin de floraison. LST recommandé.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 40, max: 48 }, lamp_height_cm: 40, ec: { min: 1.6, max: 2.0 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  hawaiian_snow: {
+    name: "Hawaiian Snow Auto", icon: "🌺", type: "Sativa Auto", category: "auto",
+    total_weeks: { min: 10, max: 12 }, height_cm: { min: 90, max: 140 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Sativa allongée, stretch important → LST/topping précoce. Arômes tropicaux intenses.",
+    phases: {
+      veg:    { temp: { min: 23, max: 28 }, humidity: { min: 55, max: 70 }, lamp_height_cm: 65, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 22, max: 27 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 50, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  northern_lights_og: {
+    name: "Northern Lights OG Auto", icon: "🌌", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 8, max: 10 }, height_cm: { min: 60, max: 100 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Classique très robuste. Résistante aux erreurs. Buds compacts et résineuses.",
+    phases: {
+      veg:    { temp: { min: 21, max: 26 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 20, max: 25 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 40, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  super_silver_haze: {
+    name: "Super Silver Haze Auto", icon: "🌫️", type: "Sativa Auto", category: "auto",
+    total_weeks: { min: 10, max: 13 }, height_cm: { min: 90, max: 150 }, difficulty: "Avancé",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Sativa dominante, croissance vigoureuse. LST indispensable. EC modéré, sensible aux carences.",
+    phases: {
+      veg:    { temp: { min: 23, max: 28 }, humidity: { min: 55, max: 70 }, lamp_height_cm: 70, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 22, max: 27 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 55, ec: { min: 1.4, max: 1.8 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  lavender: {
+    name: "Lavender Auto", icon: "💜", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 8, max: 10 }, height_cm: { min: 60, max: 100 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Températures fraîches en fin de floraison → teintes violettes. Arômes floraux marqués.",
+    phases: {
+      veg:    { temp: { min: 21, max: 26 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 18, max: 24 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 40, ec: { min: 1.4, max: 1.8 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  london_pound_cake: {
+    name: "London Pound Cake Auto", icon: "🎂", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 110 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Buds denses aux arômes dessert. Ventilation forte, surveiller botrytis.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 40, max: 48 }, lamp_height_cm: 40, ec: { min: 1.6, max: 2.0 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  mimosa: {
+    name: "Mimosa Auto", icon: "🍊🥂", type: "Sativa Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 80, max: 120 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Arômes agrumes intenses. LST recommandé, structure ouverte.",
+    phases: {
+      veg:    { temp: { min: 23, max: 28 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 60, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 22, max: 27 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 45, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  blueberry_crumble: {
+    name: "Blueberry Crumble Auto", icon: "🫐🥧", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 8, max: 10 }, height_cm: { min: 60, max: 100 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Compacte et productive. Fraîcheur en fin → couleurs bleues. LST léger.",
+    phases: {
+      veg:    { temp: { min: 21, max: 26 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 18, max: 24 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 40, ec: { min: 1.4, max: 1.8 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  chocolope: {
+    name: "Chocolope Auto", icon: "🍫", type: "Sativa Auto", category: "auto",
+    total_weeks: { min: 10, max: 12 }, height_cm: { min: 90, max: 140 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Sativa longue, arômes chocolat/café. LST indispensable. Bonne résistance.",
+    phases: {
+      veg:    { temp: { min: 23, max: 28 }, humidity: { min: 55, max: 70 }, lamp_height_cm: 65, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 22, max: 27 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 50, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  gmo_cookies: {
+    name: "GMO Cookies Auto", icon: "🧄", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 110 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Arômes puissants ail/diesel. Buds très résineuses. Humidité critique < 50%.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 38, max: 48 }, lamp_height_cm: 40, ec: { min: 1.6, max: 2.0 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  solar_panel: {
+    name: "Solar Panel Auto", icon: "☀️", type: "Sativa Auto", category: "auto",
+    total_weeks: { min: 10, max: 12 }, height_cm: { min: 90, max: 150 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Grande canopée, optimise la lumière. SCROG recommandé. Ventilez bien.",
+    phases: {
+      veg:    { temp: { min: 23, max: 28 }, humidity: { min: 55, max: 70 }, lamp_height_cm: 70, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 22, max: 27 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 55, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  lsd: {
+    name: "LSD Auto", icon: "🔮", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 8, max: 10 }, height_cm: { min: 60, max: 100 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Très résistante aux moisissures et stress. Effet psychédélique puissant malgré l'auto.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 40, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  godfather_og: {
+    name: "Godfather OG Auto", icon: "🎩", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 110 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "OG très puissante. Buds lourdes et denses → ventilation maximale.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 38, max: 48 }, lamp_height_cm: 40, ec: { min: 1.6, max: 2.0 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  chem_brulee: {
+    name: "Chem Brulée Auto", icon: "🔥🍮", type: "Hybride Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 120 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Arômes diesel/vanille. Bonne résistance. LST pour étaler la canopée.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 42, ec: { min: 1.5, max: 2.0 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  jet_fuel: {
+    name: "Jet Fuel Auto", icon: "✈️", type: "Sativa Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 80, max: 130 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Arômes diesel intenses, structure ouverte. LST recommandé.",
+    phases: {
+      veg:    { temp: { min: 23, max: 28 }, humidity: { min: 55, max: 70 }, lamp_height_cm: 60, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 22, max: 27 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 48, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  tangerine_dream: {
+    name: "Tangerine Dream Auto", icon: "🍊", type: "Sativa Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 80, max: 120 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Arômes agrumes puissants. Très productive. LST léger.",
+    phases: {
+      veg:    { temp: { min: 23, max: 28 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 60, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 22, max: 27 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 45, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  sticky_broccoli: {
+    name: "Sticky Broccoli Auto", icon: "🥦", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 8, max: 10 }, height_cm: { min: 60, max: 100 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Très résineuse, compacte. Bonne résistance aux variations de temp.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 20, max: 25 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 40, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  green_crack_f1: {
+    name: "Green Crack F1 Auto", icon: "💚", type: "Sativa Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 80, max: 130 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "F1 très vigoureuse, croissance rapide. LST recommandé dès la 3e semaine.",
+    phases: {
+      veg:    { temp: { min: 23, max: 28 }, humidity: { min: 55, max: 70 }, lamp_height_cm: 60, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 22, max: 27 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 48, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  wurlz_f1: {
+    name: "Wurlz F1 Auto", icon: "🎵", type: "Hybride Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 110 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "F1 hybride vigoureuse. Arômes complexes fruités. Bonne résistance.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 42, ec: { min: 1.5, max: 2.0 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  black_orchid: {
+    name: "Black Orchid Auto", icon: "🖤🌸", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 110 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Teintes sombres en fin de floraison (fraîcheur). Arômes floraux/terreux.",
+    phases: {
+      veg:    { temp: { min: 21, max: 26 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 18, max: 24 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 40, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  frosted_guava: {
+    name: "Frosted Guava Auto", icon: "🍈❄️", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 110 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Trichomes abondants. Surveiller humidité. Arômes tropicaux/sucrés.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 38, max: 48 }, lamp_height_cm: 40, ec: { min: 1.6, max: 2.0 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  apple_fritter: {
+    name: "Apple Fritter Auto", icon: "🍎🥞", type: "Hybride Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 110 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Arômes pomme/vanille. Buds denses → ventilation importante.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 40, max: 48 }, lamp_height_cm: 40, ec: { min: 1.6, max: 2.0 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  watermelon_candy: {
+    name: "Watermelon Candy Auto", icon: "🍉🍬", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 8, max: 10 }, height_cm: { min: 60, max: 100 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Compacte, arômes sucrés. Résistante, idéale débutants.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 20, max: 25 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 40, ec: { min: 1.4, max: 1.8 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  // sunset_sherbet déjà présente ✓
+
+  do_si_dos: {
+    name: "Do-Si-Dos Auto", icon: "🍪", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 110 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Buds très denses et résineuses. Humidité < 48% en floraison. Ventilation forte.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 38, max: 48 }, lamp_height_cm: 40, ec: { min: 1.6, max: 2.0 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  runtz: {
+    name: "Runtz Auto", icon: "🍬🎨", type: "Hybride Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 110 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Arômes candy très prononcés. Trichomes denses. Surveiller HR en fin de floraison.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 40, max: 48 }, lamp_height_cm: 40, ec: { min: 1.6, max: 2.0 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  blue_monster: {
+    name: "Blue Monster Auto", icon: "🫐👾", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 8, max: 10 }, height_cm: { min: 60, max: 100 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Compacte et productive. Arômes baies. Résistante.",
+    phases: {
+      veg:    { temp: { min: 21, max: 26 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 18, max: 24 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 40, ec: { min: 1.4, max: 1.8 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  critical_cheese: {
+    name: "Critical Cheese Auto", icon: "🧀", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 8, max: 10 }, height_cm: { min: 60, max: 100 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Arômes fromage/skunk prononcés. Productive et robuste.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 20, max: 25 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 40, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  white_widow: {
+    name: "White Widow Auto", icon: "🕸️", type: "Hybride Auto", category: "auto",
+    total_weeks: { min: 8, max: 10 }, height_cm: { min: 60, max: 100 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Classique très résistante. Couverture de trichomes exceptionnelle.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 20, max: 25 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 40, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  critical: {
+    name: "Critical Auto", icon: "⚠️", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 7, max: 9 }, height_cm: { min: 50, max: 90 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Cycle court, très productive. Idéale SOG. Robuste aux variations.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 20, max: 25 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 40, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  jack_herer: {
+    name: "Jack Herer Auto", icon: "🌿", type: "Sativa Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 80, max: 130 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Sativa légendaire. Structure ouverte → LST. Arômes pin/épices.",
+    phases: {
+      veg:    { temp: { min: 23, max: 28 }, humidity: { min: 55, max: 70 }, lamp_height_cm: 65, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 22, max: 27 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 50, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  passion_fruitz: {
+    name: "Passion Fruitz Auto", icon: "🌺🍹", type: "Hybride Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 110 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Arômes fruits de la passion intenses. Bonne résistance. LST léger.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 42, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  ghost_train_haze: {
+    name: "Ghost Train Haze Auto", icon: "👻🚂", type: "Sativa Auto", category: "auto",
+    total_weeks: { min: 10, max: 13 }, height_cm: { min: 90, max: 150 }, difficulty: "Avancé",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Sativa puissante et grande. LST/SCROG obligatoire. EC modéré, sensible aux carences.",
+    phases: {
+      veg:    { temp: { min: 23, max: 28 }, humidity: { min: 55, max: 70 }, lamp_height_cm: 70, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 22, max: 27 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 55, ec: { min: 1.4, max: 1.8 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  power_plant: {
+    name: "Power Plant Auto", icon: "⚡🏭", type: "Sativa Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 80, max: 130 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Productive, structure ouverte. LST recommandé. Bonne tolérance aux stress.",
+    phases: {
+      veg:    { temp: { min: 23, max: 28 }, humidity: { min: 55, max: 70 }, lamp_height_cm: 65, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 22, max: 27 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 50, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  gg4: {
+    name: "GG#4 Auto", icon: "🦍", type: "Hybride Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 70, max: 120 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Résine exceptionnelle (Gorilla Glue). Humidité critique en fin de floraison. Ventilation max.",
+    phases: {
+      veg:    { temp: { min: 22, max: 27 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 20, max: 26 }, humidity: { min: 38, max: 48 }, lamp_height_cm: 40, ec: { min: 1.6, max: 2.0 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  tropicana_cookies: {
+    name: "Tropicana Cookies Auto", icon: "🍊🍪", type: "Sativa Auto", category: "auto",
+    total_weeks: { min: 9, max: 11 }, height_cm: { min: 80, max: 120 }, difficulty: "Intermédiaire",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Arômes orange/cookie. Structure ouverte. LST recommandé.",
+    phases: {
+      veg:    { temp: { min: 23, max: 28 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 60, ec: { min: 0.8, max: 1.3 } },
+      flower: { temp: { min: 22, max: 27 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 45, ec: { min: 1.5, max: 1.9 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  blueberry_muffin: {
+    name: "Blueberry Muffin Auto", icon: "🫐🧁", type: "Indica Auto", category: "auto",
+    total_weeks: { min: 8, max: 10 }, height_cm: { min: 60, max: 100 }, difficulty: "Facile",
+    light_schedule: "18/6 ou 20/4 seed-to-harvest",
+    tips_global: "Arômes myrtille/muffin. Compacte et productive. Résistante aux débutants.",
+    phases: {
+      veg:    { temp: { min: 21, max: 26 }, humidity: { min: 50, max: 65 }, lamp_height_cm: 55, ec: { min: 0.8, max: 1.2 } },
+      flower: { temp: { min: 18, max: 24 }, humidity: { min: 40, max: 50 }, lamp_height_cm: 40, ec: { min: 1.4, max: 1.8 } },
+      drying: { temp: { min: 15, max: 21 }, humidity: { min: 45, max: 55 } }
+    }
+  },
+
+  
 };
+
 
 const ALL_STRAINS = { ...STRAINS_PHOTO, ...STRAINS_AUTO };
 
