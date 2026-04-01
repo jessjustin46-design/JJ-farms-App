@@ -316,22 +316,129 @@ function loadState() {
 }
 
 // ─── SVG LOGO ────────────────────────────────────────────────────────────────
-function JJLogo({size=40}){
-  return(
-    <svg width={size} height={size*1.15} viewBox="0 0 80 92" fill="none">
+function JJLogo({ size = 40 }) {
+  return (
+    <svg
+      width={size}
+      height={size * 1.15}
+      viewBox="0 0 100 115"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <defs>
-        <radialGradient id="lg2" cx="50%" cy="40%" r="60%"><stop offset="0%" stopColor="#6aaa5a"/><stop offset="100%" stopColor="#2d6a22"/></radialGradient>
-        <radialGradient id="gg2" cx="50%" cy="0%" r="100%"><stop offset="0%" stopColor="#f0cc6a"/><stop offset="100%" stopColor="#b8952a"/></radialGradient>
+        {/* Dégradé vert pour la feuille (plus naturel et profond) */}
+        <linearGradient id="leafGradient" x1="50%" y1="10%" x2="50%" y2="85%" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#8ed46e" />
+          <stop offset="50%" stopColor="#4a9c3d" />
+          <stop offset="100%" stopColor="#2d6a22" />
+        </linearGradient>
+
+        {/* Dégradé pour les nervures (plus clair) */}
+        <linearGradient id="veinGradient" x1="30%" y1="20%" x2="70%" y2="80%" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#a8e38a" />
+          <stop offset="100%" stopColor="#3f8a35" />
+        </linearGradient>
+
+        {/* Dégradé doré/terre pour le texte "FARM'S" */}
+        <linearGradient id="textGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#f0d070" />
+          <stop offset="100%" stopColor="#b88a2a" />
+        </linearGradient>
       </defs>
-      <path d="M40 85 L40 52" stroke="#2d6a22" strokeWidth="2.5" strokeLinecap="round"/>
-      <path d="M40 52 C40 52 30 38 32 26 C34 16 40 12 40 12 C40 12 46 16 48 26 C50 38 40 52 40 52Z" fill="url(#lg2)"/>
-      <path d="M37 46 C37 46 20 40 16 28 C13 19 17 13 17 13 C17 13 24 15 28 23 C33 33 37 46 37 46Z" fill="url(#lg2)" opacity="0.92"/>
-      <path d="M43 46 C43 46 60 40 64 28 C67 19 63 13 63 13 C63 13 56 15 52 23 C47 33 43 46 43 46Z" fill="url(#lg2)" opacity="0.92"/>
-      <path d="M35 54 C35 54 15 52 9 40 C5 31 10 24 10 24 C10 24 18 24 23 32 C29 42 35 54 35 54Z" fill="url(#lg2)" opacity="0.78"/>
-      <path d="M45 54 C45 54 65 52 71 40 C75 31 70 24 70 24 C70 24 62 24 57 32 C51 42 45 54 45 54Z" fill="url(#lg2)" opacity="0.78"/>
-      <circle cx="40" cy="58" r="14" fill="url(#gg2)"/>
-      <text x="40" y="55" textAnchor="middle" fill="#2a1800" fontSize="6.5" fontFamily="serif" fontWeight="700">JJ</text>
-      <text x="40" y="64" textAnchor="middle" fill="#5a3800" fontSize="3.8" fontFamily="serif" letterSpacing="1">FARM'S</text>
+
+      {/* Tige principale */}
+      <path
+        d="M50 98 L50 62"
+        stroke="#2d6a22"
+        strokeWidth="4.5"
+        strokeLinecap="round"
+      />
+
+      {/* Feuille de cannabis stylisée et détaillée */}
+      <path
+        d="M50 62 
+           Q35 38 22 42 
+           Q18 28 28 18 
+           Q38 22 45 35 
+           Q50 12 55 35 
+           Q62 22 72 18 
+           Q82 28 78 42 
+           Q65 38 50 62 Z"
+        fill="url(#leafGradient)"
+        stroke="#1f5a1a"
+        strokeWidth="3"
+      />
+
+      {/* Folioles latérales gauches (plus naturelles) */}
+      <path
+        d="M48 55 Q32 42 25 48 Q20 38 30 30 Q38 38 48 55 Z"
+        fill="url(#leafGradient)"
+        opacity="0.95"
+      />
+      <path
+        d="M47 58 Q28 48 19 55 Q15 45 26 37 Q35 47 47 58 Z"
+        fill="url(#leafGradient)"
+        opacity="0.85"
+      />
+
+      {/* Folioles latérales droites */}
+      <path
+        d="M52 55 Q68 42 75 48 Q80 38 70 30 Q62 38 52 55 Z"
+        fill="url(#leafGradient)"
+        opacity="0.95"
+      />
+      <path
+        d="M53 58 Q72 48 81 55 Q85 45 74 37 Q65 47 53 58 Z"
+        fill="url(#leafGradient)"
+        opacity="0.85"
+      />
+
+      {/* Nervures principales (pour plus de réalisme) */}
+      <path
+        d="M50 62 Q42 40 28 32"
+        fill="none"
+        stroke="url(#veinGradient)"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+      <path
+        d="M50 62 Q58 40 72 32"
+        fill="none"
+        stroke="url(#veinGradient)"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+
+      {/* Cercle de fond pour le texte (style badge ferme) */}
+      <circle cx="50" cy="82" r="19" fill="#2d6a22" />
+
+      {/* Texte JJ (plus gros et impactant) */}
+      <text
+        x="50"
+        y="78"
+        textAnchor="middle"
+        fill="#f0e8c0"
+        fontSize="13"
+        fontFamily="serif"
+        fontWeight="900"
+        letterSpacing="-1"
+      >
+        JJ
+      </text>
+
+      {/* Texte FARM'S (en dessous, style élégant) */}
+      <text
+        x="50"
+        y="90"
+        textAnchor="middle"
+        fill="url(#textGradient)"
+        fontSize="4.2"
+        fontFamily="serif"
+        fontWeight="700"
+        letterSpacing="2.2"
+      >
+        FARM'S
+      </text>
     </svg>
   );
 }
